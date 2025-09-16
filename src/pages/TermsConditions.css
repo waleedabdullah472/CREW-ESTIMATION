@@ -1,0 +1,54 @@
+.terms-conditions {
+  width: 100%;
+  padding: 3rem 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: #fff;
+  box-sizing: border-box; /* ✅ ensures padding doesn’t break layout */
+}
+
+/* ✅ Paragraphs: full width + left aligned */
+.terms-conditions p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: left;   /* Left side */
+  width: 100%;        /* ✅ full responsive width */
+  max-width: 100%;    /* ✅ prevents overflow */
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .terms-conditions {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .terms-conditions p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .terms-conditions {
+    padding: 2rem 1rem;
+  }
+
+  .terms-conditions p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .terms-conditions {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .terms-conditions p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,109 @@
+/* Footer.css */
+.footer {
+  background: black; /* dark base */
+  color: #f1f1f1;
+  padding: 50px 20px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Section */
+.footer-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-left p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* Center Section */
+.footer-center {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  min-width: 300px;
+}
+
+.footer-column h4 {
+  color: #ff7a00; /* Orange heading */
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ff7a00; /* Orange hover */
+}
+
+/* Right Section */
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-right h4 {
+  color: #ff7a00; /* Orange heading */
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-right p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-right p:hover {
+  color: #ff7a00; /* Orange hover */
+}
+
+/* Bottom */
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #aaa;
+}

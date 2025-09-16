@@ -1,0 +1,81 @@
+.privacy-policy {
+  width: 100%;
+  padding: 3rem 4rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #fff;
+  box-sizing: border-box; /* ✅ keeps layout stable */
+}
+
+/* Main Title */
+.privacy-policy h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  color: #111;
+}
+
+/* Section Headings */
+.privacy-policy h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+  border-left: 5px solid #f0ad4e; /* ✅ orange accent */
+  padding-left: 10px;
+}
+
+/* Paragraphs Full Width */
+.privacy-policy p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: justify; /* ✅ looks professional */
+  width: 100%;
+  max-width: 100%;     /* ✅ prevents overflow */
+  display: block;
+}
+
+/* Bold Text */
+.privacy-policy p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .privacy-policy {
+    padding: 2.5rem 2rem;
+  }
+
+  .privacy-policy h2 {
+    font-size: 1.6rem;
+  }
+
+  .privacy-policy p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .privacy-policy {
+    padding: 2rem 1rem;
+  }
+
+  .privacy-policy h1 {
+    font-size: 2.2rem;
+  }
+
+  .privacy-policy h2 {
+    font-size: 1.3rem;
+  }
+
+  .privacy-policy p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
