@@ -76,7 +76,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <div className="footer-bottom-left">
-            <p>© 2004 PGR Game. All Rights Reserved.</p>
+            <p>© 2025 CREW ESTIMATION. All Rights Reserved.</p>
           </div>
           <div className="footer-bottom-right">
             {/* 5 Small Pictures */}
