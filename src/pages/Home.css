@@ -178,7 +178,7 @@ html, body, #root, .home-container {
   font-size: 1.4rem; 
   font-weight: 700; 
   margin-bottom: 1rem; 
-  color: #111; 
+  color: #ff8c00; 
   font-family: "Barlow", sans-serif;
 }
 
@@ -323,7 +323,7 @@ html, body, #root, .home-container {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: #222;
+  color: #ff8c00;
   font-family: "Barlow", sans-serif;
 }
 
@@ -390,7 +390,7 @@ html, body, #root, .home-container {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #222;
+  color: #ff8c00;
   font-family: "Barlow", sans-serif;
 }
 
@@ -427,7 +427,7 @@ html, body, #root, .home-container {
   text-align: left;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #222;
+  color: #ff8c00;
   font-family: "Barlow", sans-serif;
 }
 
@@ -483,6 +483,7 @@ html, body, #root, .home-container {
 .step-item h3 {
   font-family: "Barlow", sans-serif;
 font-size: 30px;
+color: #ff8c00;
 font-weight: 700;
 line-height: 40px;
 letter-spacing: 0.16em;
