@@ -30,7 +30,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* ✅ New Quick Links Row */}
           <div className="footer-column quick-links">
             <h4>Quick Links</h4>
             <ul>
@@ -45,14 +44,49 @@ const Footer = () => {
         {/* Right Section */}
         <div className="footer-right">
           <h4>Contact</h4>
-          <p>📞 +17869870481</p>
-          <p>✉️ info@pgrgame.com</p>
+          {/* WhatsApp Link */}
+          <p>
+            📞{" "}
+            <a
+              href="https://wa.me/17869870481"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +17869870481
+            </a>
+          </p>
+
+          {/* Gmail Link */}
+          <p>
+            ✉️{" "}
+            <a
+              href="mailto:info@pgrgame.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              info@pgrgame.com
+            </a>
+          </p>
+
           <p>📍 Lahore, Pakistan</p>
         </div>
       </div>
 
+      {/* Footer Bottom - Modified structure */}
       <div className="footer-bottom">
-        <p>© 2004 PGR Game. All Rights Reserved.</p>
+        <div className="footer-bottom-content">
+          <div className="footer-bottom-left">
+            <p>© 2004 PGR Game. All Rights Reserved.</p>
+          </div>
+          <div className="footer-bottom-right">
+            {/* 5 Small Pictures */}
+            <img src="/1.png" alt="icon1" />
+            <img src="/2.png" alt="icon2" />
+            <img src="/3.png" alt="icon3" />
+            <img src="/4.png" alt="icon4" />
+            <img src="/5.png" alt="icon5" />
+          </div>
+        </div>
       </div>
     </footer>
   );
