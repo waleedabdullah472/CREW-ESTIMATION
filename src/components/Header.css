@@ -1,9 +1,7 @@
-/* Header.css */
 .header {
   background: white;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -25,16 +23,19 @@
 
 .top-bar-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center for all screens */
   align-items: center;
+  flex-wrap: wrap;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .contact-info {
   display: flex;
   gap: 25px;
+  align-items: center;
+  flex-wrap: nowrap; /* Always keep in one row */
 }
 
 .contact-item {
@@ -42,6 +43,8 @@
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
+  font-size: 15px;
+  white-space: nowrap; /* Prevent breaking into new lines */
 }
 
 .contact-item:hover {
@@ -70,7 +73,7 @@
 }
 
 .header-logo img {
-  max-height: 110px; /* Adjust the max height of the logo */
+  max-height: 110px;
 }
 
 /* Navigation Links */
@@ -87,7 +90,8 @@
   position: relative;
 }
 
-.nav-links a, .nav-links span {
+.nav-links a,
+.nav-links span {
   text-decoration: none;
   color: #333;
   font-weight: 700;
@@ -97,8 +101,9 @@
   cursor: pointer;
 }
 
-.nav-links a:after, .nav-links span:after {
-  content: '';
+.nav-links a:after,
+.nav-links span:after {
+  content: "";
   position: absolute;
   width: 0;
   height: 3px;
@@ -108,11 +113,13 @@
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover:after, .nav-links span:hover:after {
+.nav-links a:hover:after,
+.nav-links span:hover:after {
   width: 100%;
 }
 
-.nav-links a:hover, .nav-links span:hover {
+.nav-links a:hover,
+.nav-links span:hover {
   color: #ff6600;
 }
 
@@ -176,17 +183,17 @@
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-  .contact-info {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
   .top-bar-content {
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 20px;
+    flex-direction: row; /* Keep in row on medium screens */
+    justify-content: center;
+    gap: 20px;
   }
-  
+
+  .contact-info {
+    flex-direction: row; /* Stay in one row */
+    gap: 15px;
+  }
+
   .navbar {
     padding: 22px 20px;
   }
@@ -194,9 +201,21 @@
 
 @media (max-width: 768px) {
   .top-bar {
-    display: none;
+    padding: 6px 0;
+    font-size: 14px;
   }
-  
+
+  .top-bar-content {
+    flex-direction: row; /* Keep side by side */
+    justify-content: center;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .contact-item {
+    font-size: 14px;
+  }
+
   .navbar {
     justify-content: space-between;
     padding: 15px 20px;
@@ -227,7 +246,8 @@
     border-bottom: 1px solid #f0f0f0;
   }
 
-  .nav-links a, .nav-links span {
+  .nav-links a,
+  .nav-links span {
     font-size: 20px;
     display: block;
     width: 100%;
