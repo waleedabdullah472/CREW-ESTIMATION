@@ -117,7 +117,7 @@
 }
 
 .footer-bottom-left p {
-  font-size: 14px;
+  font-size: 18px;
   color: #aaa;
   margin: 0;
 }
@@ -183,4 +183,7 @@
     height: auto;
     max-width: 300px; /* Optional: set a max limit */
   }
+}
+.crew{
+  color: #ff7a00;
 }

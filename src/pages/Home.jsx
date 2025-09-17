@@ -76,7 +76,7 @@ const Home = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src="/girl.jpg" alt="Construction Estimating" />
+            <img src="/0987654321.jpg" alt="Construction Estimating" />
           </div>
         </div>
       </section>
