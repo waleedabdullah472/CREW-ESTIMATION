@@ -80,11 +80,8 @@ const Footer = () => {
           </div>
           <div className="footer-bottom-right">
             {/* 5 Small Pictures */}
-            <img src="/1.png" alt="icon1" />
-            <img src="/2.png" alt="icon2" />
-            <img src="/3.png" alt="icon3" />
-            <img src="/4.png" alt="icon4" />
-            <img src="/5.png" alt="icon5" />
+            <img src="/payment.png" alt="icon1" />
+           
           </div>
         </div>
       </div>

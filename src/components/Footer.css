@@ -94,7 +94,7 @@
   color: #ff7a00;
 }
 
-/* Footer Bottom - Modified CSS */
+/* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid #333;
   margin-top: 40px;
@@ -142,7 +142,22 @@
   transform: scale(1.15);
 }
 
-/* Responsive */
+/* Responsive Image Sizing */
+@media (min-width: 768px) {
+  .footer-bottom-right img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-bottom-right img {
+    width: 700px;
+    height: 55px;
+  }
+}
+
+/* Responsive Layout */
 @media (max-width: 768px) {
   .footer-center {
     flex-direction: column;
@@ -155,10 +170,17 @@
     gap: 15px;
     text-align: center;
   }
-  
+
   .footer-bottom-left, 
   .footer-bottom-right {
     justify-content: center;
     width: 100%;
+  }
+
+  /* Image takes full width on small screens */
+  .footer-bottom-right img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Optional: set a max limit */
   }
 }
