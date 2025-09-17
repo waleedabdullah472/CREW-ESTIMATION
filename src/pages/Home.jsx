@@ -52,7 +52,7 @@ const Home = () => {
           </p>
           <button 
   className="hero-button"
-  onClick={() => window.open("https://wa.me/923001234567", "_blank")}
+  onClick={() => window.open("https://wa.me/+17869870481", "_blank")}
 >
   GET STARTED
 </button>
