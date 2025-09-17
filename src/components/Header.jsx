@@ -52,7 +52,7 @@ const Header = () => {
             </span>
             <span className="contact-item">
               <FaEnvelope className="contact-icon" />
-              <strong>jeff@dreamlandestimation.com</strong>
+              <strong> crewestimation@gmail.com</strong>
             </span>
           </div>
         </div>

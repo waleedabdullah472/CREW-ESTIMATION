@@ -64,11 +64,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              info@pgrgame.com
+              crewestimation@gmail.com
             </a>
           </p>
 
-          <p>📍 Lahore, Pakistan</p>
+          <p>📍 Texas,USA </p>
         </div>
       </div>
 
