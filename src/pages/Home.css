@@ -28,7 +28,7 @@ html, body, #root, .home-container {
 /* Hero Section */
 .hero-section {
   position: relative;
-  background: url('/bgggg.jpg') center/cover no-repeat;
+  background: url('/bgg.jpg') center/cover no-repeat;
   display: flex; 
   align-items: center; 
   justify-content: flex-start;
