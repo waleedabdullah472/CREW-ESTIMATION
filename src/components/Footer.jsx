@@ -60,11 +60,11 @@ const Footer = () => {
           <p>
             ✉️{" "}
             <a
-              href="mailto:info@pgrgame.com"
+              href="info@crew-estimation.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              crewestimation@gmail.com
+              info@crew-estimation.com
             </a>
           </p>
 

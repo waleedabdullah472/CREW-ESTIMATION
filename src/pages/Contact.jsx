@@ -12,13 +12,13 @@ export default function Contect() {
         <div className="contect-info">
           {/* Email */}
           <a
-            href="crewestimation@gmail.com"
+          
             className="contect-card"
           >
             <img src="/eee.png" alt="Email Icon" className="contect-pic" />
             <div>
               <h3>Email</h3>
-              <p>crewestimation@gmail.com</p>
+              <p>info@crew-estimation.com</p>
             </div>
           </a>
 
