@@ -416,6 +416,7 @@ html, body, #root, .home-container {
   margin-bottom: 0.8rem;
   color: #ff8c00;
   font-family: "Barlow", sans-serif;
+  text-align: center;
 }
 
 .showcase-item p {
@@ -512,6 +513,7 @@ html, body, #root, .home-container {
   font-size: 1.1rem;
   color: #ff8c00;
   font-weight: 700;
+  text-align: center;
 }
 
 /* ============================ */

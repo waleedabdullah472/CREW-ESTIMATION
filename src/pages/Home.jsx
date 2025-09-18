@@ -123,7 +123,7 @@ const Home = () => {
         <div className="cta-right">
  <button 
   className="cta-button" 
-  onClick={() => window.open("https://wa.me/923001234567", "_blank")}
+  onClick={() => window.open("https://wa.me/+17869870481", "_blank")}
 >
   Contact Us
 </button>
