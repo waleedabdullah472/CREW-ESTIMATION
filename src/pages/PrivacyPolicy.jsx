@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
 
 We consider the privacy of our visitors as a critical factor for interaction.<br></br>
 
-CREW ESTIMATION is a London-Based Company and here is our complete privacy policy.<br></br>
+CREW ESTIMATION is a USA-Based Company and here is our complete privacy policy.<br></br>
 
 CREW ESTIMATION respects the privacy of people interacting with our website and we do 
 not share information of our customers with anyone in normal circumstances.<br></br>

@@ -48,7 +48,7 @@ const Home = () => {
             CONSTRUCTION ESTIMATING <br /> & MATERIAL TAKEOFF SERVICES
           </h1>
           <p className="hero-paragraph">
-            WE HELP BUSY CONTRACTORS ESTIMATE AND WIN PROJECTS.
+            WE HELP BUSY CONTRACTORS IN ESTIMATE AND WINNING BIDS
           </p>
           <button 
   className="hero-button"
@@ -66,10 +66,18 @@ const Home = () => {
         <div className="service-row">
           <div className="service-text">
             <p className="service-paragraph">
-            CREW ESTIMATION offers specialized construction estimating services and material takeoffs with the help of construction managers and quantity surveyors. Most contractors are so busy running their jobsites that they NEGLECT the estimating. We create accurate cost estimates for contractors so they can win more bids and grow their business. Our mission is to be the leader in evaluating and managing potential construction estimates. CREW ESTIMATION has maintained a track record of delivering the right construction and material estimates to our valuable clients within the fastest turnaround time.
+            CREW ESTIMATION offers specialized construction estimating services 
+            and material takeoffs with the help of construction managers and quantity
+             surveyors. Most Contractors are so busy in running their jobsites that they
+              NEGLECT the estimating. We create accurate cost estimates for contractors 
+              so they can win more bids and grow their business. Our mission is to be the 
+              leader in evaluating and managing potential construction estimates.
+               CREW ESTIMATION has maintained a track record of delivering the right
+                construction and material estimates to our valuable clients within the 
+                fastest turnaround time.
             </p>
             <p className="service-paragraph">
-             We are proficient with <strong>Planswift and Bluebeam</strong>for on-screen Material Takeoffs. Also, for<strong>zip-code based pricing </strong>out the takeoffs, we use<strong>RSmeans, Craftsmen</strong>and our own developed databases
+             We are proficient with <strong>Planswift and Bluebeam</strong>for on-screen Material Takeoffs. Also, for <strong>based pricing </strong>out the takeoffs, we use <strong>RSmeans, Craftsmen </strong>and our own developed databases
             </p>
             <p className="service-paragraph">
             Without any doubt, CREW ESTIMATION is the place where you get quality construction estimates and affordability under one roof.
@@ -171,19 +179,18 @@ When you submit your drawing plans and specifications, we prepare a quote includ
             <h2>✔ Fastest Turnaround Time</h2>
             <p>We provide construction estimating services and quantity takeoffs within the fast turnaround time of 24 to 48 hours</p>
             <h2>✔ Affordable Prices</h2>
-            <p>Our construction estimates and quantity takeoffs are at competitive market rates of 200$ on average. (It can be less or more depending on the scope of project)</p>
+            <p>Our construction estimates and quantity takeoffs are at competitive market rates  are at xompetatatove market rates on average. (It can be less or more depending on the scope of project)</p>
             <h2>✔ Accurate And Detailed Estimates</h2>
             <p>With the use of the latest Software and our developed construction cost database based on zip code, we can ensure accuracy in our estimates. We also offer on-demand vendor pricing.</p>
-            <h2>✔ Certified Estimators</h2>
-            <p>We are proficient in using various construction estimating software like Plan swift, Bluebeam, Trimble, RS Means, Cost Works, Xactimate, and Quest Estimating.</p>
+              <h2>✔ Pricing softwares</h2>
+              <p>we use RS Means & Accubid for projects final pricing...</p>
           </div>
           <div className="extra-right">
             <h2>✔ 92% Bid-Hit Ratio</h2>
             <p>The bid winning ratio of our estimates is more than 92% as per our past contractor's bids data.</p>
             <h2>✔ Highly Skilled Professional Team</h2>
             <p>Our team comprises of Construction Estimators, Engineers, field experts, and construction managers.</p>
-            <h2>✔ Fastest Turnaround Time</h2>
-            <p>We provide construction estimating services and quantity takeoffs within the fast turnaround time of 24 to 48 hours.</p>
+            
              <h2>✔ 24/7 Customer Support</h2>
             <p>Our customer support is available 24/7 to help you.</p>
           </div>
