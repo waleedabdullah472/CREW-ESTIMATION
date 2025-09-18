@@ -104,7 +104,10 @@ const Header = () => {
               </li>
             </ul>
           </li>
-
+<li>
+            <Link to="/review" onClick={closeAll}>Review</Link>
+          </li>
+          
           <li>
             <Link to="/contact" onClick={closeAll}>Contact</Link>
           </li>

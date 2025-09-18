@@ -13,6 +13,8 @@ import FAQs from "./pages/FAQs";
 import RefundPolicy from "./pages/RefundPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import Review from "./pages/Review";
+
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
             <Route path="/faqs/refund-policy" element={<RefundPolicy />} />
             <Route path="/faqs/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/faqs/terms-conditions" element={<TermsConditions />} />
+             <Route path="/Review" element={<Review />} />
             <Route path="*" element={<h2>404 Page Not Found</h2>} />
           </Routes>
         </main>
