@@ -27,7 +27,7 @@ export default function Contect() {
             <img src="/lll.png" alt="Location Icon" className="contect-pic" />
             <div>
               <h3>Location</h3>
-              <p>Texas, USA</p>
+              <p>Florida, USA</p>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ export default function Contect() {
             <img src="/ppp.png" alt="Phone Icon" className="contect-pic" />
             <div>
               <h3>Phone</h3>
-              <p>+1 (555) 123-4567</p>
+              <p>+17869870481</p>
             </div>
           </a>
         </div>

@@ -327,11 +327,11 @@ html, body, #root, .home-container {
 }
 
 .new-left h5 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #444;
-  margin-bottom: 1rem;
-  font-family: "Barlow", sans-serif;
+font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ff8c00;
+    font-family: "Barlow", sans-serif;
 }
 
 .new-left p {

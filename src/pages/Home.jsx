@@ -26,6 +26,10 @@ const Home = () => {
     { image: "/4.svg", title: "Lumber Estimating", text: "We help Framing contractors, Millwork contractors, Commercial Contractors, and Builders by providing precise millwork estimates or lumber takeoffs. Our takeoffs include Rough & Finish Carpentry, wood trusses, drywall framing, cabinetry, millwork, lumber and timber, etc. We save the expense of estimating software through our expert team of estimators performing accurate and timely takeoff" },
     { image: "/5.svg", title: "Concrete Estimating", text: "We offer thorough and reliable estimates and quantity takeoffs to contractors in all concrete work. We provide construction takeoff and estimates for all concrete work including foundation, footing, slabs, blocks, pavers, driveways, garage, basement takeoffs, and parking lots takeoffs, etc. We use Bluebeam and Planswift softwares for concrete estimating services." },
     
+
+     { image: "/12121212 (1).png", title: "Doors and Windows", text: "From residential homes to large commercial projects, our doors and windows estimating services deliver accurate takeoffs for frames, glazing, fittings, and accessories. We help contractors reduce waste, control costs, and secure bids with precise calculations tailored to each project’s requirements." },
+    { image: "/12121212 (2).png", title: "Carpentry", text:"Our carpentry estimation covers everything from structural framing to detailed woodwork. Whether it’s trusses, cabinetry, timber, or interior finishing, we provide contractors with reliable takeoffs that ensure projects stay within budget and timelines while maintaining high craftsmanship standards." },
+
   ];
 
   // Step Section images
@@ -179,7 +183,7 @@ When you submit your drawing plans and specifications, we prepare a quote includ
             <h2>✔ Fastest Turnaround Time</h2>
             <p>We provide construction estimating services and quantity takeoffs within the fast turnaround time of 24 to 48 hours</p>
             <h2>✔ Affordable Prices</h2>
-            <p>Our construction estimates and quantity takeoffs are at competitive market rates  are at xompetatatove market rates on average. (It can be less or more depending on the scope of project)</p>
+            <p>Our construction estimates and quantity takeoffs are at competitive market rates  are at competitive market rates on average. (It can be less or more depending on the scope of project)</p>
             <h2>✔ Accurate And Detailed Estimates</h2>
             <p>With the use of the latest Software and our developed construction cost database based on zip code, we can ensure accuracy in our estimates. We also offer on-demand vendor pricing.</p>
               <h2>✔ Pricing softwares</h2>

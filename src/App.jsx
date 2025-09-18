@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer"; 
-import WhatsAppButton from "./components/WhatsAppButton"; // ✅ Import
+import WhatsAppButton from "./components/WhatsAppButton"; 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
@@ -38,8 +38,6 @@ function App() {
           </Routes>
         </main>
         <Footer />   
-
-        {/* ✅ WhatsApp Button shows on all pages */}
         <WhatsAppButton /> 
       </div>
     </BrowserRouter>

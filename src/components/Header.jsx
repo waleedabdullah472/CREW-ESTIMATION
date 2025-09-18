@@ -105,7 +105,7 @@ const Header = () => {
             </ul>
           </li>
           <li>
-            <Link to="/review" onClick={closeAll}>Review</Link>
+            <Link to="/review" onClick={closeAll}>Reviews</Link>
           </li>
           
           <li>
