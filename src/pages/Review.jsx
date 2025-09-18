@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import "./Review.css";
 
 export default function Review() {
@@ -8,46 +9,137 @@ export default function Review() {
   const [comment, setComment] = useState("");
   const [project, setProject] = useState("");
   const [name, setName] = useState("");
+  const [reviewedProjects, setReviewedProjects] = useState(new Set());
+  const [userInteractions, setUserInteractions] = useState({});
 
-  const addReview = () => {
+  // Load reviews and user data from backend and localStorage
+  useEffect(() => {
+    fetchReviews();
+    
+    // Load reviewed projects from localStorage
+    const savedReviewedProjects = localStorage.getItem("reviewedProjects");
+    if (savedReviewedProjects) {
+      setReviewedProjects(new Set(JSON.parse(savedReviewedProjects)));
+    }
+    
+    // Load user interactions from localStorage
+    const savedInteractions = localStorage.getItem("reviewInteractions");
+    if (savedInteractions) {
+      setUserInteractions(JSON.parse(savedInteractions));
+    }
+  }, []);
+
+  const fetchReviews = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/api/reviews");
+      setReviews(res.data);
+    } catch (err) {
+      console.error("Error fetching reviews:", err);
+    }
+  };
+
+  const addReview = async () => {
     if (rating === 0 || comment.trim() === "" || project.trim() === "") {
       alert("Please add project name, rating, and comment.");
       return;
     }
-    const newReview = {
-      project,
-      rating,
-      comment,
-      name: name || "Anonymous",
-      date: new Date().toLocaleDateString(),
-      likes: 0,
-      dislikes: 0,
-    };
-    setReviews([newReview, ...reviews]);
-    setRating(0);
-    setHover(0);
-    setComment("");
-    setProject("");
-    setName("");
+    
+    // Check if user has already reviewed this project
+    if (reviewedProjects.has(project)) {
+      alert("You have already reviewed this project. You can only review each project once.");
+      return;
+    }
+    
+    try {
+      const res = await axios.post("http://localhost:5000/api/reviews", {
+        project, 
+        rating, 
+        comment, 
+        name: name || "Anonymous"
+      });
+      
+      // Add project to reviewed set
+      const updatedReviewedProjects = new Set(reviewedProjects);
+      updatedReviewedProjects.add(project);
+      setReviewedProjects(updatedReviewedProjects);
+      
+      // Save to localStorage
+      localStorage.setItem("reviewedProjects", JSON.stringify(Array.from(updatedReviewedProjects)));
+      
+      setReviews([res.data, ...reviews]);
+      setRating(0);
+      setHover(0);
+      setComment("");
+      setProject("");
+      setName("");
+    } catch (err) {
+      console.error("Error adding review:", err);
+      alert("Error adding review. Please try again.");
+    }
   };
 
-  const handleLike = (index) => {
-    const updated = [...reviews];
-    updated[index].likes += 1;
-    setReviews(updated);
+  const handleLike = async (id) => {
+    // Check if user has already interacted with this review
+    if (userInteractions[id]) {
+      if (userInteractions[id] === 'like') {
+        alert("You've already liked this review!");
+        return;
+      } else {
+        alert("You've already disliked this review. You can't like it now.");
+        return;
+      }
+    }
+    
+    try {
+      const res = await axios.put(`http://localhost:5000/api/reviews/${id}/like`);
+      
+      // Update the reviews with new like count
+      setReviews(reviews.map(r => r._id === id ? res.data : r));
+      
+      // Record the interaction
+      const updatedInteractions = {...userInteractions, [id]: 'like'};
+      setUserInteractions(updatedInteractions);
+      localStorage.setItem("reviewInteractions", JSON.stringify(updatedInteractions));
+    } catch (err) {
+      console.error("Error liking review:", err);
+    }
   };
 
-  const handleDislike = (index) => {
-    const updated = [...reviews];
-    updated[index].dislikes += 1;
-    setReviews(updated);
+  const handleDislike = async (id) => {
+    // Check if user has already interacted with this review
+    if (userInteractions[id]) {
+      if (userInteractions[id] === 'dislike') {
+        alert("You've already disliked this review!");
+        return;
+      } else {
+        alert("You've already liked this review. You can't dislike it now.");
+        return;
+      }
+    }
+    
+    try {
+      const res = await axios.put(`http://localhost:5000/api/reviews/${id}/dislike`);
+      
+      // Update the reviews with new dislike count
+      setReviews(reviews.map(r => r._id === id ? res.data : r));
+      
+      // Record the interaction
+      const updatedInteractions = {...userInteractions, [id]: 'dislike'};
+      setUserInteractions(updatedInteractions);
+      localStorage.setItem("reviewInteractions", JSON.stringify(updatedInteractions));
+    } catch (err) {
+      console.error("Error disliking review:", err);
+    }
   };
+
+  // Check if current project has been reviewed
+  const isProjectReviewed = reviewedProjects.has(project);
 
   return (
     <div className="review-page">
       <h2 className="review-title">Customer Reviews</h2>
 
-      {/* ⭐ Review Form */}
+      {/* Review Form */}
       <div className="review-form">
         <input
           type="text"
@@ -65,17 +157,24 @@ export default function Review() {
           className="review-input"
         />
 
-        {/* ⭐ Star Rating */}
+        {/* Show message if project already reviewed */}
+        {isProjectReviewed && (
+          <div className="review-warning">
+            ⚠️ You've already reviewed this project
+          </div>
+        )}
+
+        {/* Star Rating */}
         <div className="star-rating">
-          {[...Array(5)].map((star, index) => {
+          {[...Array(5)].map((_, index) => {
             const currentRating = index + 1;
             return (
               <span
                 key={index}
-                className={`star ${currentRating <= (hover || rating) ? "active" : ""}`}
-                onClick={() => setRating(currentRating)}
-                onMouseEnter={() => setHover(currentRating)}
-                onMouseLeave={() => setHover(rating)}
+                className={`star ${currentRating <= (hover || rating) ? "active" : ""} ${isProjectReviewed ? "disabled" : ""}`}
+                onClick={() => !isProjectReviewed && setRating(currentRating)}
+                onMouseEnter={() => !isProjectReviewed && setHover(currentRating)}
+                onMouseLeave={() => !isProjectReviewed && setHover(rating)}
               >
                 ★
               </span>
@@ -88,39 +187,64 @@ export default function Review() {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="Write your review..."
-          className="review-textarea"
+          className={`review-textarea ${isProjectReviewed ? "disabled" : ""}`}
+          disabled={isProjectReviewed}
         />
 
-        <button onClick={addReview} className="review-btn">Submit Review</button>
+        <button 
+          onClick={addReview} 
+          className={`review-btn ${isProjectReviewed ? "disabled" : ""}`}
+          disabled={isProjectReviewed}
+        >
+          {isProjectReviewed ? "Already Reviewed" : "Submit Review"}
+        </button>
       </div>
 
-      {/* ⭐ Display Reviews */}
+      {/* Display Reviews */}
       <ul className="review-list">
-        {reviews.map((rev, index) => (
-          <li key={index} className="review-item">
-            <div className="review-header">
-              <div>
-                <h3>{rev.project}</h3>
-                <span className="review-author">by {rev.name}</span>
+        {reviews.map((rev) => {
+          const userAction = userInteractions[rev._id];
+          return (
+            <li key={rev._id} className="review-item">
+              <div className="review-header">
+                <div>
+                  <h3>{rev.project}</h3>
+                  <span className="review-author">by {rev.name}</span>
+                </div>
+                <div className="review-stars">
+                  {"★".repeat(rev.rating)}{"☆".repeat(5 - rev.rating)}
+                </div>
               </div>
-              <div className="review-stars">
-                {"★".repeat(rev.rating)}{"☆".repeat(5 - rev.rating)}
+              <p className="review-comment">"{rev.comment}"</p>
+              <div className="review-footer">
+                <span className="review-date">
+                  {new Date(rev.date).toLocaleDateString()}
+                </span>
+                <div className="review-actions">
+                  <button 
+                    onClick={() => handleLike(rev._id)} 
+                    className={`like-btn ${userAction === 'like' ? 'active' : ''} ${userAction ? 'disabled' : ''}`}
+                    disabled={userAction}
+                  >
+                    👍 {rev.likes}
+                  </button>
+                  <button 
+                    onClick={() => handleDislike(rev._id)} 
+                    className={`dislike-btn ${userAction === 'dislike' ? 'active' : ''} ${userAction ? 'disabled' : ''}`}
+                    disabled={userAction}
+                  >
+                    👎 {rev.dislikes}
+                  </button>
+                </div>
               </div>
-            </div>
-            <p className="review-comment">“{rev.comment}”</p>
-            <div className="review-footer">
-              <span className="review-date">{rev.date}</span>
-              <div className="review-actions">
-                <button onClick={() => handleLike(index)} className="like-btn">
-                  👍 {rev.likes}
-                </button>
-                <button onClick={() => handleDislike(index)} className="dislike-btn">
-                  👎 {rev.dislikes}
-                </button>
-              </div>
-            </div>
-          </li>
-        ))}
+              {userAction && (
+                <div className="interaction-message">
+                  You've already {userAction}d this review
+                </div>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -33,7 +33,7 @@ function App() {
             <Route path="/faqs/refund-policy" element={<RefundPolicy />} />
             <Route path="/faqs/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/faqs/terms-conditions" element={<TermsConditions />} />
-             <Route path="/Review" element={<Review />} />
+          <Route path="/Review" element={<Review />} />
             <Route path="*" element={<h2>404 Page Not Found</h2>} />
           </Routes>
         </main>
