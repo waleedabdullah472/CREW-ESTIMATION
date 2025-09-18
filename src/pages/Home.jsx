@@ -200,6 +200,42 @@ When you submit your drawing plans and specifications, we prepare a quote includ
           </div>
         </div>
       </section>
+      
+      
+{/* Section: NewOne with 4 Cards in a Row */}
+<section className="newone-section">
+  <div className="newone-cards">
+    
+    <div className="newone-card">
+      <img src="/144.png" alt="Quality" className="newone-icon" />
+      <h3>232</h3>
+      <p>Happy Icons</p>
+    </div>
+
+    <div className="newone-card">
+      <img src="/155.png" alt="Expert Team" className="newone-icon" />
+      <h3>551</h3>
+      <p>Projects</p>
+    </div>
+
+    <div className="newone-card">
+      <img src="/166.png" alt="Project Success" className="newone-icon" />
+      <h3>1230</h3>
+      <p>Hours Of Support</p>
+    </div>
+
+    <div className="newone-card">
+      <img src="/177.png" alt="Trusted Partners" className="newone-icon" />
+      <h3>17</h3>
+      <p>Hard Workers</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
       {/* Section 8: Steps */}
       <section className="steps-section">
