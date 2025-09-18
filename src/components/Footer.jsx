@@ -68,7 +68,7 @@ const Footer = () => {
             </a>
           </p>
 
-          <p>📍 Texas,USA </p>
+          <p>📍 Florida, USA </p>
         </div>
       </div>
 
