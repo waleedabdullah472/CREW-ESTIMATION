@@ -61,10 +61,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 40px;
- 
   margin: 0 auto;
   position: relative;
- 
 }
 
 /* Logo */
@@ -124,14 +122,7 @@
   color: #ff6600;
 }
 
-/* Dropdown Menu */
-.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeDown 0.4s ease-in-out;
-}
-
+/* Dropdown Menu - CLICK-BASED */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -146,6 +137,14 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.3s ease;
+}
+
+/* Show dropdown when the parent <li> has the 'active' class */
+.dropdown.active .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeDown 0.4s ease-in-out;
 }
 
 .dropdown-menu li a {
@@ -183,45 +182,30 @@
 }
 
 /* Responsive Styles */
+/* Medium Screens (992px to 769px) */
 @media (max-width: 992px) {
-  .top-bar-content {
-    flex-direction: row; /* Keep in row on medium screens */
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .contact-info {
-    flex-direction: row; /* Stay in one row */
-    gap: 15px;
-  }
-
-  .navbar {
-    padding: 22px 20px;
+  .nav-links {
+    gap: 40px; /* Reduce gap on medium screens */
   }
 }
 
+/* Tablet and Mobile Screens (768px and below) */
 @media (max-width: 768px) {
   .top-bar {
     padding: 6px 0;
     font-size: 14px;
   }
-
-  .top-bar-content {
-    flex-direction: row; /* Keep side by side */
-    justify-content: center;
-    padding: 0 10px;
-    gap: 15px;
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
   }
-
-  .contact-item {
-    font-size: 14px;
-  }
-
+  
   .navbar {
     justify-content: space-between;
     padding: 15px 20px;
   }
-
+  
   .nav-links {
     position: fixed;
     top: 0;
@@ -240,13 +224,13 @@
   .nav-links.active {
     left: 0;
   }
-
+  
   .nav-links li {
     width: 100%;
     padding: 15px 0;
     border-bottom: 1px solid #f0f0f0;
   }
-
+  
   .nav-links a,
   .nav-links span {
     font-size: 20px;
@@ -254,6 +238,7 @@
     width: 100%;
   }
 
+  /* Dropdown on mobile - it's part of the vertical menu */
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -261,7 +246,7 @@
     width: calc(100% - 40px);
     display: none;
   }
-
+  
   .dropdown.active .dropdown-menu {
     display: block;
   }

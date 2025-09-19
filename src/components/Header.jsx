@@ -64,7 +64,6 @@ const Header = () => {
         <Link to="/" className="header-logo" onClick={closeAll}>
           <img src="/logo.png" alt="Company Logo" />
         </Link>
-        
 
         {/* Desktop Menu */}
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
@@ -108,7 +107,7 @@ const Header = () => {
             <Link to="/review" onClick={closeAll}>Reviews</Link>
           </li>
           
-          <li>
+          <li>  
             <Link to="/contact" onClick={closeAll}>Contact</Link>
           </li>
         </ul>
