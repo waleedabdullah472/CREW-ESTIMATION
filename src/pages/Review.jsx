@@ -1,251 +1,136 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import "./Review.css";
+import React, { useState } from 'react';
+import './Review.css';
 
-export default function Review() {
-  const [reviews, setReviews] = useState([]);
-  const [rating, setRating] = useState(0);
-  const [hover, setHover] = useState(0);
-  const [comment, setComment] = useState("");
-  const [project, setProject] = useState("");
-  const [name, setName] = useState("");
-  const [reviewedProjects, setReviewedProjects] = useState(new Set());
-  const [userInteractions, setUserInteractions] = useState({});
+const reviews = [
+  {
+    id: 1,
+    name: 'Michael Peterson',
+    project: 'Luxury Waterfront Villa in Miami',
+    comment: 'The craftsmanship and attention to detail on our new villa were simply outstanding. The team managed every phase of the project with professionalism, delivering our dream home ahead of schedule. We were kept informed throughout the entire process and could not be happier with the results!',
+    imageUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop'
+  },
+  {
+    id: 2,
+    name: 'Sarah Gomez',
+    project: 'Commercial Office Building in Orlando',
+    comment: 'Our office building project was handled with incredible efficiency. From the initial design to the final build, the communication was seamless. The quality of work is top-tier, and the building is a perfect representation of our company’s brand and vision. A truly professional team!',
+    imageUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop',
+  },
+  {
+    id: 3,
+    name: 'David Wilson',
+    project: 'Renovation of Historic Home in St. Augustine',
+    comment: 'Restoring a historic property is a delicate task, and this company proved to be masters of their craft. They preserved the original character while integrating modern amenities. The project was completed with respect for the history of the home and with impeccable quality.',
+    imageUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop',
+  },
+  {
+    id: 4,
+    name: 'Jennifer Lee',
+    project: 'Custom Retail Space in Tampa',
+    comment: 'The team transformed our vision for a new retail store into a stunning reality. Their project management was flawless, and they delivered a high-quality, functional space that perfectly met our business needs. We’ve received so many compliments on the design and finish!',
+    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop',
+  },
+  {
+    id: 5,
+    name: 'Robert Miller',
+    project: 'Multi-family Apartment Complex in Fort Lauderdale',
+    comment: 'Constructing this large-scale apartment complex was a huge undertaking, but the team handled it with precision. They adhered to the timeline and budget, and the quality of the units is excellent. We are very happy with the final product and the partnership we built.',
+    imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop',
+  },
+  {
+    id: 6,
+    name: 'Laura Garcia',
+    project: 'Coastal Home Remodel in the Keys',
+    comment: 'The full remodel of our coastal home was a breeze with this company. They expertly handled the challenges of building in a sensitive environment, and the result is a beautiful, resilient home that captures the spirit of the Keys. The process was transparent and stress-free.',
+    imageUrl: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1974&auto=format&fit=crop'
 
-  // Load reviews and user data from backend and localStorage
-  useEffect(() => {
-    fetchReviews();
-    
-    // Load reviewed projects from localStorage
-    const savedReviewedProjects = localStorage.getItem("reviewedProjects");
-    if (savedReviewedProjects) {
-      setReviewedProjects(new Set(JSON.parse(savedReviewedProjects)));
-    }
-    
-    // Load user interactions from localStorage
-    const savedInteractions = localStorage.getItem("reviewInteractions");
-    if (savedInteractions) {
-      setUserInteractions(JSON.parse(savedInteractions));
-    }
-  }, []);
+  },
+  {
+    id: 7,
+    name: 'William B. Johnson',
+    project: 'New Marina and Dock in Fort Myers',
+    comment: 'The construction of our new marina was a complex project, but the engineers and builders were incredibly knowledgeable. They navigated all regulatory requirements and delivered a state-of-the-art facility that is both durable and beautiful. We highly recommend them for any marine construction.',
+    imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop',
+  },
+  // To create a seamless loop, duplicate the first few cards
+  {
+    id: 8,
+    name: 'Michael Peterson',
+    project: 'Luxury Waterfront Villa in Miami',
+    comment: 'The craftsmanship and attention to detail on our new villa were simply outstanding. The team managed every phase of the project with professionalism, delivering our dream home ahead of schedule. We were kept informed throughout the entire process and could not be happier with the results!',
+   imageUrl: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1974&auto=format&fit=crop'
+},
+  {
+    id: 9,
+    name: 'Sarah Gomez',
+    project: 'Commercial Office Building in Orlando',
+    comment: 'Our office building project was handled with incredible efficiency. From the initial design to the final build, the communication was seamless. The quality of work is top-tier, and the building is a perfect representation of our company’s brand and vision. A truly professional team!',
+    imageUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop',
+  },
+];
 
-  const fetchReviews = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/api/reviews");
-      setReviews(res.data);
-    } catch (err) {
-      console.error("Error fetching reviews:", err);
-    }
+const Review = () => {
+  const [selectedReview, setSelectedReview] = useState(null);
+
+  const handleCardClick = (review) => {
+    setSelectedReview(review);
   };
 
-  const addReview = async () => {
-    if (rating === 0 || comment.trim() === "" || project.trim() === "") {
-      alert("Please add project name, rating, and comment.");
-      return;
-    }
-    
-    // Check if user has already reviewed this project
-    if (reviewedProjects.has(project)) {
-      alert("You have already reviewed this project. You can only review each project once.");
-      return;
-    }
-    
-    try {
-      const res = await axios.post("http://localhost:5000/api/reviews", {
-        project, 
-        rating, 
-        comment, 
-        name: name || "Anonymous"
-      });
-      
-      // Add project to reviewed set
-      const updatedReviewedProjects = new Set(reviewedProjects);
-      updatedReviewedProjects.add(project);
-      setReviewedProjects(updatedReviewedProjects);
-      
-      // Save to localStorage
-      localStorage.setItem("reviewedProjects", JSON.stringify(Array.from(updatedReviewedProjects)));
-      
-      setReviews([res.data, ...reviews]);
-      setRating(0);
-      setHover(0);
-      setComment("");
-      setProject("");
-      setName("");
-    } catch (err) {
-      console.error("Error adding review:", err);
-      alert("Error adding review. Please try again.");
-    }
+  const handleClosePopup = () => {
+    setSelectedReview(null);
   };
-
-  const handleLike = async (id) => {
-    // Check if user has already interacted with this review
-    if (userInteractions[id]) {
-      if (userInteractions[id] === 'like') {
-        alert("You've already liked this review!");
-        return;
-      } else {
-        alert("You've already disliked this review. You can't like it now.");
-        return;
-      }
-    }
-    
-    try {
-      const res = await axios.put(`http://localhost:5000/api/reviews/${id}/like`);
-      
-      // Update the reviews with new like count
-      setReviews(reviews.map(r => r._id === id ? res.data : r));
-      
-      // Record the interaction
-      const updatedInteractions = {...userInteractions, [id]: 'like'};
-      setUserInteractions(updatedInteractions);
-      localStorage.setItem("reviewInteractions", JSON.stringify(updatedInteractions));
-    } catch (err) {
-      console.error("Error liking review:", err);
-    }
-  };
-
-  const handleDislike = async (id) => {
-    // Check if user has already interacted with this review
-    if (userInteractions[id]) {
-      if (userInteractions[id] === 'dislike') {
-        alert("You've already disliked this review!");
-        return;
-      } else {
-        alert("You've already liked this review. You can't dislike it now.");
-        return;
-      }
-    }
-    
-    try {
-      const res = await axios.put(`http://localhost:5000/api/reviews/${id}/dislike`);
-      
-      // Update the reviews with new dislike count
-      setReviews(reviews.map(r => r._id === id ? res.data : r));
-      
-      // Record the interaction
-      const updatedInteractions = {...userInteractions, [id]: 'dislike'};
-      setUserInteractions(updatedInteractions);
-      localStorage.setItem("reviewInteractions", JSON.stringify(updatedInteractions));
-    } catch (err) {
-      console.error("Error disliking review:", err);
-    }
-  };
-
-  // Check if current project has been reviewed
-  const isProjectReviewed = reviewedProjects.has(project);
 
   return (
-    <div className="review-page">
-      <h2 className="review-title">Customer Reviews</h2>
-
-      {/* Review Form */}
-      <div className="review-form">
-        <input
-          type="text"
-          value={project}
-          onChange={(e) => setProject(e.target.value)}
-          placeholder="Project name..."
-          className="review-input"
-        />
-
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Your name (optional)"
-          className="review-input"
-        />
-
-        {/* Show message if project already reviewed */}
-        {isProjectReviewed && (
-          <div className="review-warning">
-            ⚠️ You've already reviewed this project
-          </div>
-        )}
-
-        {/* Star Rating */}
-        <div className="star-rating">
-          {[...Array(5)].map((_, index) => {
-            const currentRating = index + 1;
-            return (
-              <span
-                key={index}
-                className={`star ${currentRating <= (hover || rating) ? "active" : ""} ${isProjectReviewed ? "disabled" : ""}`}
-                onClick={() => !isProjectReviewed && setRating(currentRating)}
-                onMouseEnter={() => !isProjectReviewed && setHover(currentRating)}
-                onMouseLeave={() => !isProjectReviewed && setHover(rating)}
-              >
-                ★
-              </span>
-            );
-          })}
+    <div className="review-container">
+      <h2>Client Testimonials</h2>
+      <div className="review-cards-wrapper">
+        <div className="review-cards-track">
+          {reviews.map((review) => (
+            <div
+              className="review-card"
+              key={review.id}
+              onClick={() => handleCardClick(review)}
+            >
+              <div className="review-card-header">
+                <img
+                  src={review.imageUrl}
+                  alt={review.name}
+                  className="reviewer-pic"
+                />
+                <div className="reviewer-info">
+                  <p className="reviewer-name">{review.name}</p>
+                  <p className="reviewer-project">{review.project}</p>
+                </div>
+              </div>
+              <p className="reviewer-comment">{review.comment}</p>
+            </div>
+          ))}
         </div>
-
-        {/* Comment Box */}
-        <textarea
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          placeholder="Write your review..."
-          className={`review-textarea ${isProjectReviewed ? "disabled" : ""}`}
-          disabled={isProjectReviewed}
-        />
-
-        <button 
-          onClick={addReview} 
-          className={`review-btn ${isProjectReviewed ? "disabled" : ""}`}
-          disabled={isProjectReviewed}
-        >
-          {isProjectReviewed ? "Already Reviewed" : "Submit Review"}
-        </button>
       </div>
 
-      {/* Display Reviews */}
-      <ul className="review-list">
-        {reviews.map((rev) => {
-          const userAction = userInteractions[rev._id];
-          return (
-            <li key={rev._id} className="review-item">
-              <div className="review-header">
-                <div>
-                  <h3>{rev.project}</h3>
-                  <span className="review-author">by {rev.name}</span>
-                </div>
-                <div className="review-stars">
-                  {"★".repeat(rev.rating)}{"☆".repeat(5 - rev.rating)}
-                </div>
+      {selectedReview && (
+        <div className="popup-overlay" onClick={handleClosePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={handleClosePopup}>
+              &times;
+            </button>
+            <div className="popup-header">
+              <img
+                src={selectedReview.imageUrl}
+                alt={selectedReview.name}
+                className="popup-pic"
+              />
+              <div className="popup-info">
+                <p className="popup-name">{selectedReview.name}</p>
+                <p className="popup-project">{selectedReview.project}</p>
               </div>
-              <p className="review-comment">"{rev.comment}"</p>
-              <div className="review-footer">
-                <span className="review-date">
-                  {new Date(rev.date).toLocaleDateString()}
-                </span>
-                <div className="review-actions">
-                  <button 
-                    onClick={() => handleLike(rev._id)} 
-                    className={`like-btn ${userAction === 'like' ? 'active' : ''} ${userAction ? 'disabled' : ''}`}
-                    disabled={userAction}
-                  >
-                    👍 {rev.likes}
-                  </button>
-                  <button 
-                    onClick={() => handleDislike(rev._id)} 
-                    className={`dislike-btn ${userAction === 'dislike' ? 'active' : ''} ${userAction ? 'disabled' : ''}`}
-                    disabled={userAction}
-                  >
-                    👎 {rev.dislikes}
-                  </button>
-                </div>
-              </div>
-              {userAction && (
-                <div className="interaction-message">
-                  You've already {userAction}d this review
-                </div>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+            </div>
+            <p className="popup-comment">{selectedReview.comment}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default Review;
