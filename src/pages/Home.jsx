@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import Graph from './../components/Graph';
 
 const Home = () => {
   
@@ -200,39 +201,8 @@ When you submit your drawing plans and specifications, we prepare a quote includ
           </div>
         </div>
       </section>
+      <Graph />
       
-      
-{/* Section: NewOne with 4 Cards in a Row */}
-<section className="newone-section">
-  <div className="newone-cards">
-    
-    <div className="newone-card">
-      <img src="/144.png" alt="Quality" className="newone-icon" />
-      <h3>200+</h3>
-      <p>Happy Clients</p>
-    </div>
-
-    <div className="newone-card">
-      <img src="/155.png" alt="Expert Team" className="newone-icon" />
-      <h3>1100+</h3>
-      <p>Projects</p>
-    </div>
-
-  
-    <div className="newone-card">
-      <img src="/166.png" alt="Trusted Partners" className="newone-icon" />
-      <h3>10+</h3>
-      <p>Year of Experience</p>
-    </div>
-
-    <div className="newone-card">
-      <img src="/177.png" alt="Quality" className="newone-icon" />
-      <h3>250+</h3>
-      <p>Winning Bids</p>
-    </div>
-
-  </div>
-</section>
 
 
 
