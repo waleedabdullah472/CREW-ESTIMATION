@@ -153,7 +153,7 @@ const Graph = () => {
         <div className="newone-card">
           <img src="/144.png" alt="Happy Clients" className="newone-icon" />
           <h3>{startCount && <Counter target={200} />}+</h3>
-          <p>Happy Clients</p>
+          <p>Happy Clients</p> 
         </div>
         <div className="newone-card">
           <img src="/155.png" alt="Projects" className="newone-icon" />
