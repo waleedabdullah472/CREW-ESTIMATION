@@ -1,0 +1,91 @@
+/* 🔹 Global */
+.contect-page {
+  width: 100%;
+  padding: 4rem 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafc;
+  color: #222;
+}
+
+.contect-page h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #111;
+}
+
+/* 🔹 Layout with Grid (5 cols left, 7 cols right) */
+.contect-layout {
+  display: grid;
+  grid-template-columns: 5fr 7fr; /* left = 5, right = 7 */
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* 🔹 Left side (Contact Info) */
+.contect-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 🔹 Each Card */
+.contect-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.contect-card:hover {
+  transform: translateY(-6px);
+}
+
+/* 🔹 Icon */
+.contect-pic {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  flex-shrink: 0;
+  
+}
+
+/* 🔹 Card Text */
+.contect-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #ff8c00;
+  text-align: left;
+}
+
+.contect-card p {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+}
+
+/* 🔹 Right side (Map) */
+.map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Responsive */
+@media (max-width: 992px) {
+  .contect-layout {
+    grid-template-columns: 1fr; /* stack on smaller screens */
+  }
+
+  .map-container {
+    min-height: 350px;
+  }
+}

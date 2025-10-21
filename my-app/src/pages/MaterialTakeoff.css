@@ -1,0 +1,141 @@
+/* 🔹 Global Styles */
+.material-takeoff {
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+section {
+  width: 100%;
+  padding: 4rem 3rem;
+}
+
+/* 🔹 Section Backgrounds */
+.mt-section-one {
+  background: #ffffff;
+}
+
+.mt-section-two {
+  background: #f3f6fa;
+}
+
+.mt-section-three {
+  background: #ffffff;
+}
+
+.mt-section-four {
+  background: #f8f9fb;
+}
+
+/* 🔹 Headings */
+.mt-section-one h2,
+.mt-section-two h2,
+.mt-section-three h2,
+.mt-section-four h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+  text-align: left;
+}
+
+.mt-section-two h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem;
+  color: #ff8c00;
+  text-align: left;
+}
+
+.mt-image-card h4 {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  color: #ff8c00;
+  text-align: center;
+}
+
+/* 🔹 Paragraphs */
+p {
+  font-size: 1.05rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #444;
+  max-width: 900px;
+}
+
+/* 🔹 Section Three: Checklist Style */
+.mt-section-three p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.mt-section-three p::before {
+  content: "✔";
+  color: #0a7c2f;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* 🔹 Image Grid for 20 Cards */
+.mt-image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mt-image-card {
+  text-align: center;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.mt-image-card:hover {
+  transform: translateY(-6px);
+}
+
+.mt-image-card img {
+  width: 50%;
+  max-width: 80px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.mt-image-card img:hover {
+  transform: scale(1.07);
+}
+
+/* 🔹 Responsive */
+@media (max-width: 1024px) {
+  .mt-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .mt-image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mt-image-card img {
+    max-width: 100%;
+  }
+}
