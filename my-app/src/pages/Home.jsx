@@ -115,7 +115,7 @@ const Home = () => {
     {
       image: "/12121212 (2).png",
       title: "Carpentry",
-      text: "Our carpentry estimating includes framing, cabinetry, and woodwork. We calculate materials and labor accurately for cost efficiency. Using advanced tools, we deliver dependable takeoffs. Each estimate helps contractors maintain quality, save time, and complete projects successfully."
+      text: "Our carpentry estimating includes framing, cabinetry, and woodwork. We calculate materials and labor accurately for cost efficiency. Using advanced tools, we deliver dependable takeoffs.Each estimate helps contractors maintain quality, save time, and complete projects successfully."
     }
   ];
 
