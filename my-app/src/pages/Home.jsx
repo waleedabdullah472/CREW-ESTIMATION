@@ -60,62 +60,62 @@ const Home = () => {
     {
       image: "/6.svg",
       title: "Masonry Estimating",
-      text: "We deliver accurate masonry takeoffs for residential and commercial projects. Our estimates include bricks, blocks, tiles, rebar, and anchors. Using expert tools, we ensure precision and cost efficiency. Each estimate supports better budgeting, material management, and seamless execution, helping contractors achieve reliable results in every construction phase efficiently."
+      text: "We deliver accurate masonry takeoffs for residential and commercial projects. Our estimates include bricks, blocks, tiles, rebar, and anchors. Using expert tools, we ensure precision and cost efficiency. Each estimate supports better budgeting, material management, and seamless execution."
     },
     {
       image: "/7.svg",
       title: "Paint Estimating",
-      text: "We provide painting estimates covering quantities, finishes, coatings, and labor costs. Using Bluebeam and Planswift, we deliver precise takeoffs that minimize waste and ensure efficiency. Each estimate helps contractors maintain quality, accuracy, and cost control for both residential and commercial painting projects, ensuring smooth execution from planning to completion."
+      text: "We provide painting estimates covering quantities, finishes, coatings, and labor costs. Using Bluebeam and Planswift, we deliver precise takeoffs that minimize waste and ensure efficiency. Each estimate helps contractors maintain quality, accuracy, and cost control for both residential and commercial."
     },
     {
       image: "/8.svg",
       title: "Drywall Estimating",
-      text: "Our drywall estimates include sheets, screws, insulation, and beads. We calculate materials and labor precisely for cost-effective planning. Using digital tools, we ensure accuracy and time savings. Each drywall estimate supports better resource allocation, smooth installation, and overall project success for both residential and commercial construction projects consistently."
+      text: "Our drywall estimates include sheets, screws, insulation, and beads. We calculate materials and labor precisely for cost-effective planning. Using digital tools, we ensure accuracy and time savings. Each drywall estimate supports better resource allocation, smooth installation."
     },
     {
       image: "/9.svg",
       title: "Sitework & Earthwork Estimating",
-      text: "We prepare sitework and earthwork estimates including excavation, grading, and utilities. Our experts calculate quantities for cut, fill, and materials with accuracy. Each estimate ensures efficient cost management, planning, and execution. We help contractors deliver projects on schedule, within budget, and with complete confidence using reliable digital takeoff tools."
+      text: "We prepare sitework and earthwork estimates including excavation, grading, and utilities. Our experts calculate quantities for cut, fill, and materials with accuracy. Each estimate ensures efficient cost management, planning, and execution. We help contractors deliver projects on schedule."
     },
     {
       image: "/10.svg",
       title: "Thermal & Moisture Protection Estimating",
-      text: "We estimate roofing, waterproofing, insulation, and sealants. Our experts calculate material quantities and labor costs precisely. Each estimate supports energy-efficient design, cost control, and durable results. We help contractors deliver moisture-resistant and reliable systems for residential and commercial projects, ensuring consistent quality and professional execution throughout construction stages."
+      text: "We estimate roofing, waterproofing, insulation, and sealants. Our experts calculate material quantities and labor costs precisely. Each estimate supports energy-efficient design, cost control, and durable results. We help contractors deliver moisture-resistant and reliable systems."
     },
     {
       image: "/1.svg",
       title: "Flooring Estimating",
-      text: "We provide flooring estimates for tiles, vinyl, carpet, and wood. Our estimators calculate material and labor requirements with accuracy. Using Planswift and Bluebeam, we ensure efficiency and precision. Each flooring estimate helps contractors reduce waste, control costs, and achieve high-quality results for residential and commercial projects seamlessly every time."
+      text: "We provide flooring estimates for tiles, vinyl, carpet, and wood. Our estimators calculate material and labor requirements with accuracy. Using Planswift and Bluebeam, we ensure efficiency and precision. Each flooring estimate helps contractors reduce waste, control costs."
     },
     {
       image: "/3.svg",
       title: "MEP Estimating",
-      text: "We offer MEP takeoffs for mechanical, electrical, and plumbing systems. Our experts calculate ductwork, wiring, and piping accurately. Using specialized tools, we ensure cost-effective planning and reliable results. Each MEP estimate supports coordination, efficiency, and accuracy, helping contractors deliver well-executed projects within time and budget consistently and professionally."
+      text: "We offer MEP takeoffs for mechanical, electrical, and plumbing systems. Our experts calculate ductwork, wiring, and piping accurately. Using specialized tools, we ensure cost-effective planning and reliable results. Each MEP estimate supports coordination, efficiency, and accuracy."
     },
     {
       image: "/2.svg",
       title: "Metal Estimating",
-      text: "We provide detailed metal takeoffs for beams, trusses, and railings. Our estimators calculate quantities with precision for cost control and material efficiency. Each estimate ensures smooth planning, budgeting, and fabrication. We help contractors achieve accurate, timely, and high-quality results for both residential and commercial structural and miscellaneous steel projects."
+      text: "We provide detailed metal takeoffs for beams, trusses, and railings. Our estimators calculate quantities with precision for cost control and material efficiency. Each estimate ensures smooth planning, budgeting, and fabrication. We help contractors achieve accurate, timely, and high-quality results"
     },
     {
       image: "/4.svg",
       title: "Lumber Estimating",
-      text: "We deliver lumber takeoffs for framing, decking, and cabinetry. Our estimates cover material quantities, costs, and labor needs precisely. Using advanced software, we ensure accuracy and efficiency. Each lumber estimate helps contractors plan better, manage budgets, and complete projects successfully with quality and precision across residential and commercial builds."
+      text: "We deliver lumber takeoffs for framing, decking, and cabinetry. Our estimates cover material quantities, costs, and labor needs precisely. Using advanced software, we ensure accuracy and efficiency. Each lumber estimate helps contractors plan better, manage budgets, and complete projects successfully."
     },
     {
       image: "/5.svg",
       title: "Concrete Estimating",
-      text: "We offer concrete estimates for foundations, slabs, and driveways. Our detailed takeoffs include rebar, formwork, and volumes. Using Bluebeam and Planswift, we ensure accuracy and cost control. Each estimate supports efficient resource planning, reduced waste, and timely completion, helping contractors execute durable, high-quality concrete projects with complete confidence always."
+      text: "We offer concrete estimates for foundations, slabs, and driveways. Our detailed takeoffs include rebar, formwork, and volumes. Using Bluebeam and Planswift, we ensure accuracy and cost control. Each estimate supports efficient resource planning, reduced waste, and timely completion."
     },
     {
       image: "/12121212 (1).png",
       title: "Doors and Windows",
-      text: "We prepare detailed estimates for doors, windows, and frames. Our service covers fittings, glass, and accessories precisely. Each takeoff ensures cost control, material efficiency, and easy procurement. We help contractors manage time, reduce waste, and deliver durable installations with quality and accuracy for both residential and commercial projects successfully."
+      text: "We prepare detailed estimates for doors, windows, and frames. Our service covers fittings, glass, and accessories precisely. Each takeoff ensures cost control, material efficiency, and easy procurement. We help contractors manage time, reduce waste."
     },
     {
       image: "/12121212 (2).png",
       title: "Carpentry",
-      text: "Our carpentry estimating includes framing, cabinetry, and woodwork. We calculate materials and labor accurately for cost efficiency. Using advanced tools, we deliver dependable takeoffs. Each estimate helps contractors maintain quality, save time, and complete projects successfully with detailed planning, precision, and reliability across interior and exterior construction work confidently."
+      text: "Our carpentry estimating includes framing, cabinetry, and woodwork. We calculate materials and labor accurately for cost efficiency. Using advanced tools, we deliver dependable takeoffs. Each estimate helps contractors maintain quality, save time, and complete projects successfully."
     }
   ];
 
