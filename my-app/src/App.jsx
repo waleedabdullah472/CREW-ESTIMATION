@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <Header />
-        <main style={{ padding: "50px", textAlign: "center" }}>
+        <main style={{ padding: "0px", textAlign: "center" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />

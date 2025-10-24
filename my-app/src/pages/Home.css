@@ -362,7 +362,6 @@ body,
 
 /* Section 6: Showcase */
 
-
 .showcase-item {
   cursor: pointer;
   border-radius: 12px;
@@ -760,11 +759,19 @@ body,
 /* Very small devices adjustments */
 @media (max-width: 480px) {
   .hero-content {
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding: 0;
+    max-width: 100%;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+    padding-top: 5px;
+    font-weight: 800;
   }
 
   .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.1rem;
+    width: 100%;
   }
 
   .hero-button {
@@ -784,6 +791,24 @@ body,
     top: 5px;
     right: 10px;
     font-size: 1.5rem;
+  }
+  .hero-paragraph {
+    font-size: 1rem;
+  }
+  .showcase-section {
+    padding: 1rem;
+  }
+  .showcase-grid {
+    padding: 0;
+  }
+  .showcase-item h3 {
+    font-size: 1.1rem;
+  }
+  .footer-center {
+    align-items: center;
+  }
+  .footer-right h4{
+    text-align: center;
   }
 }
 

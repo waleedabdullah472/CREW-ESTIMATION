@@ -165,7 +165,7 @@ const Home = () => {
       >
         <div className="hero-overlay"></div>
 
-        <div className="hero-content">
+        <div className="hero-content ">
           <motion.h2
             className="hero-subtitle"
             initial={{ x: -100, opacity: 0 }}
