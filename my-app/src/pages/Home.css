@@ -807,7 +807,7 @@ body,
   .footer-center {
     align-items: center;
   }
-  .footer-right h4{
+  .footer-right h4 {
     text-align: center;
   }
 }
@@ -831,7 +831,9 @@ body,
   padding: 30px 20px;
   border-radius: 16px;
   text-align: center;
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

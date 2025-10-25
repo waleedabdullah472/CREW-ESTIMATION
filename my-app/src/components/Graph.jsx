@@ -11,8 +11,8 @@ const Graph = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setStartCount(false); 
-          setTimeout(() => setStartCount(true), 100); 
+          setStartCount(false);
+          setTimeout(() => setStartCount(true), 100);
         }
       },
       { threshold: 0.3 }
@@ -26,7 +26,7 @@ const Graph = () => {
     const handleResize = () => {
       setCurrentGraph(0);
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -122,8 +122,8 @@ const Graph = () => {
           </button>
           <div className="carousel-indicators">
             {graphs.map((_, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className={`indicator ${index === currentGraph ? 'active' : ''}`}
                 onClick={() => setCurrentGraph(index)}
               ></span>
@@ -133,7 +133,7 @@ const Graph = () => {
             &gt;
           </button>
         </div>
-        
+
         <div className="graph-row">
           <div className="graph-header">
             <span>{graphs[currentGraph].label}</span>
@@ -152,23 +152,30 @@ const Graph = () => {
       <div className="newone-cards">
         <div className="newone-card">
           <img src="/144.png" alt="Happy Clients" className="newone-icon" />
-          <h3>{startCount && <Counter target={200} />}+</h3>
-          <p>Happy Clients</p> 
+          <div>
+            <h3>{startCount && <Counter target={200} />}+</h3>
+            <p>Happy Clients</p></div>
         </div>
         <div className="newone-card">
           <img src="/155.png" alt="Projects" className="newone-icon" />
-          <h3>{startCount && <Counter target={1100} />}+</h3>
-          <p>Projects</p>
+          <div>
+            <h3>{startCount && <Counter target={1100} />}+</h3>
+            <p>Projects</p>
+          </div>
         </div>
         <div className="newone-card">
           <img src="/166.png" alt="Years of Experience" className="newone-icon" />
-          <h3>{startCount && <Counter target={10} />}+</h3>
-          <p>Year of Experience</p>
+          <div>
+            <h3>{startCount && <Counter target={10} />}+</h3>
+            <p>Year of Experience</p>
+          </div>
         </div>
         <div className="newone-card">
           <img src="/177.png" alt="Winning Bids" className="newone-icon" />
-          <h3>{startCount && <Counter target={250} />}+</h3>
-          <p>Winning Bids</p>
+          <div>
+            <h3>{startCount && <Counter target={250} />}+</h3>
+            <p>Winning Bids</p>
+          </div>
         </div>
       </div>
     </section>
