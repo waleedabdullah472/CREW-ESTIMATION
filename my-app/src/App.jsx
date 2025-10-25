@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer"; 
-import WhatsAppButton from "./components/WhatsAppButton"; 
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
@@ -14,6 +14,7 @@ import RefundPolicy from "./pages/RefundPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import Review from "./pages/Review";
+import './App.css'
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <Header />
-        <main style={{ padding: "0px", textAlign: "center" }}>
+        <main style={{ textAlign: "center" }} className="main">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
@@ -33,12 +34,12 @@ function App() {
             <Route path="/faqs/refund-policy" element={<RefundPolicy />} />
             <Route path="/faqs/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/faqs/terms-conditions" element={<TermsConditions />} />
-          <Route path="/Review" element={<Review />} />
+            <Route path="/Review" element={<Review />} />
             <Route path="*" element={<h2>404 Page Not Found</h2>} />
           </Routes>
         </main>
-        <Footer />   
-        <WhatsAppButton /> 
+        <Footer />
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );

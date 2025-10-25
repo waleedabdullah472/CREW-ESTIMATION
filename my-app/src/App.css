@@ -1,0 +1,8 @@
+.main {
+  padding: 50px;
+}
+@media (max-width: 480px) {
+  .main {
+    padding: 10px;
+  }
+}
