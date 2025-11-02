@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Left Section */}
         <div className="footer-left">
           <div className="footer-logo">
-            <img src="/blogo.png" alt="Company Logo" />
+            <img src="/logo_black.png" alt="Company Logo" />
           </div>
           <p>
             We provide top-quality estimation and construction services with

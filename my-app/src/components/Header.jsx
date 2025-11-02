@@ -62,7 +62,7 @@ const Header = () => {
       <nav className="navbar">
         {/* Logo */}
         <Link to="/" className="header-logo" onClick={closeAll}>
-          <img src="/logo.png" alt="Company Logo" />
+          <img src="/whitelogo.png" alt="Company Logo" />
         </Link>
 
         {/* Desktop Menu */}
